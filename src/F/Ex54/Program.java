@@ -39,14 +39,17 @@ public class Program {
             return;
         }
 
-        double averagePrice = productSet.stream().map(Product::getPrice).reduce(Double::sum).orElse(0.0) / productSet.size();
+        double averagePrice = productSet.stream()
+                .map(Product::getPrice)
+                .reduce(Double::sum)
+                .orElse(0.0) / productSet.size();
 
         IO.println(String.format("Average price: %.2f", averagePrice));
 
         productSet.stream()
                 .filter(x -> x.getPrice() <= averagePrice)
                 .map(Product::getName)
-                .sorted((n1, n2) -> n2.compareTo(n1))
+                .sorted((s1, s2) -> s2.toUpperCase().compareTo(s1.toUpperCase()))
                 .forEach(IO::println);
         sc.close();
     }
