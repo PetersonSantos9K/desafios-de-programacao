@@ -25,7 +25,7 @@ public class Program {
         IO.println(String.format("Email of people whose salary is more than %.2f:", salary));
         List<Employee> filterSalary = employees.stream()
                         .filter(e -> e.getSalary() >= salary)
-                        .sorted((e1, e2) -> e1.getEmail().toLowerCase().compareTo(e2.getEmail().toLowerCase()))
+                        .sorted(Comparator.comparing(e -> e.getEmail().toLowerCase()))
                         .toList();
         filterSalary.forEach(x -> IO.println(x.getEmail()));
 

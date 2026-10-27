@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Employee {
 
     private String name;
-    private String email;
-    private Double salary;
+    private final String email;
+    private final Double salary;
 
     public Employee(String name, String email, Double salary) {
         this.name = name;
@@ -26,16 +26,8 @@ public class Employee {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public Double getSalary() {
         return salary;
-    }
-
-    public void setSalary(Double salary) {
-        this.salary = salary;
     }
 
     @Override
