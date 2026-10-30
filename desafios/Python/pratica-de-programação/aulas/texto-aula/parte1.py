@@ -1,6 +1,3 @@
-   
-
-
 def calcula_media(notas):
         media = 0
         for i in range(len(notas)):

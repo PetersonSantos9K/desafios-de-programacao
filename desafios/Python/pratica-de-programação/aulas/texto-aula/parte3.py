@@ -1,3 +1,4 @@
+import time
 
 def finalizar_pedido(pedido, callback):
     print(f"Processamento pedido {pedido}")
